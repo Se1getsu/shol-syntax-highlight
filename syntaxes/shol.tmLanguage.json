@@ -3,27 +3,79 @@
 	"name": "Shol",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#colony_declaration"
 		},
 		{
-			"include": "#strings"
+			"include": "#statement"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"colony_declaration": {
 			"patterns": [{
-				"name": "keyword.control.shol",
-				"match": "\\b(if|while|for|return)\\b"
+				"comment": "Colony Declaration",
+				"match": "^([\\*%])([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+				"captures": {
+					"1": {"name": "storage.type.class.shol"},
+					"2": {"name": "entity.name.type.class.shol"}
+				}
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.shol",
-			"begin": "\"",
-			"end": "\"",
+		"statement": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.shol",
-					"match": "\\\\."
+					"comment": "Rule",
+					"begin": "^([\\.\\|])",
+					"end": "(#)([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"beginCaptures": {
+						"1": {"name": "keyword.control.shol"}
+					},
+					"endCaptures": {
+						"1": {"name": "keyword.control.shol"},
+						"2": {"name": "entity.name.type.class.shol"}
+					},
+					"patterns": [
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#strings"
+						}
+					]
+				},
+				{
+					"comment": "Macro",
+					"match": "^(@debug|@sleep)\\b.*$",
+					"captures": {
+						"1": {"name": "keyword.control.shol"}
+					}
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"comment": "Capture",
+					"name": "variable.other.shol",
+					"match": "\\$([\\p{XID_Start}_]\\p{XID_Continue}*)?"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.shol",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.shol",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.nonquoted.shol",
+					"match": "(\\p{XID_Start}|_)\\p{XID_Continue}*"
 				}
 			]
 		}
