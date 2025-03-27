@@ -53,7 +53,12 @@
 			"patterns": [
                 {
                     "name": "punctuation.separator.continuation.line.shol",
-                    "begin": "\\\\$",
+                    "begin": "(?<=[^\\\\](?:\\\\\\\\)*)\\\\$",
+                    "end": "^"
+                },
+                {
+                    "name": "punctuation.separator.continuation.line.shol",
+                    "begin": "^\\\\$",
                     "end": "^"
                 }
 			]
