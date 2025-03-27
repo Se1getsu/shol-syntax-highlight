@@ -1,9 +1,7 @@
-# Change Log
+# 変更履歴
 
-All notable changes to the "shol-syntax-highlight" extension will be documented in this file.
+Shol言語シンタックスハイライト拡張機能のすべての重要な変更はこのファイルに記録されます。
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.0.0] - 2025-03-27
 
-## [Unreleased]
-
-- Initial release
+初期リリース

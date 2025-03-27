@@ -1,65 +1,27 @@
-# shol-syntax-highlight README
+# Shol Syntax Highlight
 
-This is the README for your extension "shol-syntax-highlight". After writing up a brief description, we recommend including the following sections.
+[Shol 言語](https://se1getsu.github.io/shol/) 公式の VSCode 拡張機能です。
 
-## Features
+![Example](images/example.png)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 機能
 
-For example if there is an image subfolder under your extension project workspace:
+Shol 言語のコードを色分けして表示し、可読性を向上させます。
 
-\!\[feature X\]\(images/feature-x.png\)
+対応している拡張子：
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- `*.shol`：Shol ソースファイル
 
-## Requirements
+- `*.shi`：Shol 中間生成ファイル
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## インストール方法
 
-## Extension Settings
+1. VSCode の拡張機能パネルを開きます (Ctrl+Shift+X)
+2. 「Shol」を検索
+3. 「Shol Syntax Highlight」をインストール
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 既知の問題
 
-For example:
+現在、既知の問題はありません。
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+不具合の報告やご質問がある場合は、[Issues](https://github.com/Se1getsu/shol-syntax-highlight/issues) または [Discord コミュニティ](https://discord.gg/CrsZKZQeWT) にお寄せください。
