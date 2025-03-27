@@ -85,6 +85,9 @@
 						},
 						{
 							"include": "#strings"
+						},
+						{
+							"include": "#operators"
 						}
 					]
 				},
@@ -187,6 +190,46 @@
 				{
 					"name": "string.nonquoted.shol",
 					"match": "(\\p{XID_Start}|_)\\p{XID_Continue}*"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.shol",
+					"match": "\\+|\\-|\\*|\\/|\\%"
+				},
+				{
+					"name": "keyword.operator.bitwise.shol",
+					"match": "~|<<|>>|\\^|\\|"
+				},
+				{
+					"name": "keyword.operator.logical.shol",
+					"match": "!|&&|\\|\\|"
+				},
+				{
+					"name": "keyword.operator.comparison.shol",
+					"match": "=|!=|<|>|<=|>="
+				},
+				{
+					"comment": "Type Hint Operator",
+					"name": "entity.name.type",
+					"match": ":(i(nt)?|d(ouble)?|s(tr)?|b(ool)?|sym(bol)?)"
+				},
+				{
+					"comment": "Type Conversion Operator",
+					"name": "entity.name.function",
+					"match": ".(i(nt)?|d(ouble)?|s(tr)?)"
+				},
+				{
+					"comment": "Utility Operator",
+					"name": "entity.name.function",
+					"match": ".(ceil|floor|round|abs|ord|chr|len)"
+				},
+				{
+					"comment": "Slice Operation Separator",
+					"name": "punctuation.separator.colon.shol",
+					"match": ":"
 				}
 			]
 		}
