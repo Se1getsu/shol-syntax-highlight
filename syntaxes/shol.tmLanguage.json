@@ -3,6 +3,9 @@
 	"name": "Shol",
 	"patterns": [
 		{
+			"include": "#line-splits"
+		},
+		{
 			"include": "#block-comments"
 		},
 		{
@@ -46,6 +49,15 @@
                 }
             ]
         },
+		"line-splits": {
+			"patterns": [
+                {
+                    "name": "punctuation.separator.continuation.line.shol",
+                    "begin": "\\\\",
+                    "end": "^"
+                }
+			]
+		},
 		"colony_declarations": {
 			"patterns": [
 				{
@@ -116,6 +128,9 @@
 					},
 					"patterns": [
 						{
+							"include": "#line-splits"
+						},
+						{
 							"include": "#block-comments"
 						},
 						{
@@ -149,6 +164,9 @@
 						"1": {"name": "keyword.control.shol"}
 					},
 					"patterns": [
+						{
+							"include": "#line-splits"
+						},
 						{
 							"include": "#block-comments"
 						},
