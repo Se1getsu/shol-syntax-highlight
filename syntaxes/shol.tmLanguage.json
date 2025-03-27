@@ -83,8 +83,10 @@
 					"end": "\"",
 					"patterns": [
 						{
-							"name": "constant.character.escape.shol",
-							"match": "\\\\."
+							"include": "#escapes"
+						},
+						{
+							"match": "[^\\\\]*"
 						}
 					]
 				},
@@ -221,14 +223,52 @@
 					"end": "\"",
 					"patterns": [
 						{
-							"name": "constant.character.escape.shol",
-							"match": "\\\\."
+							"include": "#escapes"
+						},
+						{
+							"match": "[^\\\\]*"
 						}
 					]
 				},
 				{
 					"name": "string.quoted.other.shol",
 					"match": "(\\p{XID_Start}|_)\\p{XID_Continue}*"
+				}
+			]
+		},
+		"escapes": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.shol",
+					"match": "(\\\\)x[0-9A-Fa-f]{2}",
+					"captures": {
+						"1": {"name": "constant.character.escape.backslash.shol"}
+					}
+				},
+				{
+					"name": "constant.character.escape.shol",
+					"match": "(\\\\)u[0-9A-Fa-f]{4}",
+					"captures": {
+						"1": {"name": "constant.character.escape.backslash.shol"}
+					}
+				},
+				{
+					"name": "constant.character.escape.shol",
+					"match": "(\\\\)U[0-9A-Fa-f]{8}",
+					"captures": {
+						"1": {"name": "constant.character.escape.backslash.shol"}
+					}
+				},
+				{
+					"name": "constant.character.escape.shol",
+					"match": "(\\\\)[0abtnvfre\\\\\"xuU]",
+					"captures": {
+						"1": {"name": "constant.character.escape.backslash.shol"}
+					}
+				},
+				{
+					"name": "constant.character.escape.backslash.shol",
+					"match": "(\\\\)"
 				}
 			]
 		},
