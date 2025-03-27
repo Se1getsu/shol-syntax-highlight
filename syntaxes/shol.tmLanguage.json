@@ -228,11 +228,6 @@
 		"constants": {
 			"patterns": [
 				{
-					"comment": "Int Literal",
-					"name": "constant.numeric.shol",
-					"match": "(?x) 0 | [1-9]\\d*"
-				},
-				{
 					"comment": "Double Literal",
 					"name": "constant.numeric.shol",
 					"match": "(?x) (?:\\d+\\. | \\d*\\.\\d+) (?:[eE] [+-]? \\d+)?"
@@ -241,6 +236,11 @@
 					"comment": "Double Literal",
 					"name": "constant.numeric.shol",
 					"match": "(?x) \\d+ (?:[eE] [+-]? \\d+)"
+				},
+				{
+					"comment": "Int Literal",
+					"name": "constant.numeric.shol",
+					"match": "(?x) 0 | [1-9]\\d*"
 				},
 				{
 					"comment": "Boolean Literal",
