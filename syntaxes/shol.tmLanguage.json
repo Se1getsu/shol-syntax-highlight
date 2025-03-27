@@ -92,7 +92,16 @@
 				},
 				{
 					"name": "string.quoted.other.shol",
-					"match": "^(?![\"\\-]).+$"
+					"begin": "^(?![\"\\-])",
+					"end": "$",
+					"patterns": [
+						{
+							"include": "#escapes"
+						},
+						{
+							"match": "[^\\\\]*"
+						}
+					]
 				}
 			]
 		},
