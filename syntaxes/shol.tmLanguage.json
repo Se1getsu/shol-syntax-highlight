@@ -3,39 +3,82 @@
 	"name": "Shol",
 	"patterns": [
 		{
-			"include": "#colony_declaration"
+			"include": "#block-comments"
 		},
 		{
-			"include": "#statement"
+			"include": "#comments"
+		},
+		{
+			"include": "#colony_declarations"
+		},
+		{
+			"include": "#statements"
 		}
 	],
 	"repository": {
-		"colony_declaration": {
-			"patterns": [{
-				"comment": "Colony Declaration",
-				"match": "^([\\*%])([\\p{XID_Start}_]\\p{XID_Continue}*)?",
-				"captures": {
-					"1": {"name": "storage.type.class.shol"},
-					"2": {"name": "entity.name.type.class.shol"}
+		"comments": {
+			"patterns": [
+				{
+                    "name": "comment.line.double-slash.shol",
+                    "match": "(//).*$",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.shol"
+                        }
+                    }
 				}
-			}]
+			]
 		},
-		"statement": {
+		"block-comments": {
+            "patterns": [
+                {
+                    "name": "comment.block.shol",
+                    "begin": "/\\*",
+                    "end": "\\*/",
+					"patterns": [
+						{
+							"include": "#block-comments"
+						}
+					]
+                }
+            ]
+        },
+		"colony_declarations": {
+			"patterns": [
+				{
+					"comment": "Colony Declaration",
+					"match": "^([\\*%])([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"captures": {
+						"1": {"name": "storage.type.class.shol"},
+						"2": {"name": "entity.name.type.class.shol"}
+					}
+				}
+		]
+		},
+		"statements": {
 			"patterns": [
 				{
 					"comment": "Rule",
 					"begin": "^([\\.\\|])",
-					"end": "(#)([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"end": "$",
 					"beginCaptures": {
 						"1": {"name": "keyword.control.shol"}
 					},
-					"endCaptures": {
-						"1": {"name": "keyword.control.shol"},
-						"2": {"name": "entity.name.type.class.shol"}
-					},
 					"patterns": [
 						{
-							"include": "#variables"
+							"include": "#block-comments"
+						},
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#capts"
+						},
+						{
+							"include": "#destinations"
+						},
+						{
+							"include": "#commas"
 						},
 						{
 							"include": "#strings"
@@ -44,17 +87,47 @@
 				},
 				{
 					"comment": "Macro",
-					"match": "^(@debug|@sleep)\\b.*$",
-					"captures": {
+					"begin": "^(@debug|@sleep)\\b",
+					"end": "$",
+					"beginCaptures": {
 						"1": {"name": "keyword.control.shol"}
+					},
+					"patterns": [
+						{
+							"include": "#block-comments"
+						},
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#strings"
+						}
+					]
+				}
+			]
+		},
+		"commas": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.shol",
+					"match": ","
+				}
+			]
+		},
+		"destinations": {
+			"patterns": [
+				{
+					"match": "(#)([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"captures": {
+						"1": {"name": "keyword.control.shol"},
+						"2": {"name": "entity.name.type.class.shol"}
 					}
 				}
 			]
 		},
-		"variables": {
+		"capts": {
 			"patterns": [
 				{
-					"comment": "Capture",
 					"name": "variable.other.shol",
 					"match": "\\$([\\p{XID_Start}_]\\p{XID_Continue}*)?"
 				}
