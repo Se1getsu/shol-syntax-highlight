@@ -81,6 +81,9 @@
 							"include": "#commas"
 						},
 						{
+							"include": "#constants"
+						},
+						{
 							"include": "#strings"
 						}
 					]
@@ -98,6 +101,9 @@
 						},
 						{
 							"include": "#comments"
+						},
+						{
+							"include": "#constants"
 						},
 						{
 							"include": "#strings"
@@ -130,6 +136,38 @@
 				{
 					"name": "variable.other.shol",
 					"match": "\\$([\\p{XID_Start}_]\\p{XID_Continue}*)?"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"comment": "Int Literal",
+					"name": "constant.numeric.shol",
+					"match": "(?x) 0 | [1-9]\\d*"
+				},
+				{
+					"comment": "Double Literal",
+					"name": "constant.numeric.shol",
+					"match": "(?x) (?:\\d+\\. | \\d*\\.\\d+) (?:[eE] [+-]? \\d+)?"
+				},
+				{
+					"comment": "Double Literal",
+					"name": "constant.numeric.shol",
+					"match": "(?x) \\d+ (?:[eE] [+-]? \\d+)"
+				},
+				{
+					"comment": "Boolean Literal",
+					"name": "constant.language.boolean.shol",
+					"match": "(true|false)"
+				},
+				{
+					"comment": "Symbol Literal",
+					"name": "constant.language.symbol.shol",
+					"match": "(')([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"captures": {
+						"1": {"name": "punctuation.definition.constant.shol"}
+					}
 				}
 			]
 		},
