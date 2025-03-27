@@ -1,19 +1,39 @@
 {
   "name": "shol-syntax-highlight",
-  "displayName": "shol-syntax-highlight",
-  "description": "Shol Syntax Highlight",
-  "version": "0.0.1",
+  "displayName": "Shol Syntax Highlight",
+  "description": "Shol 言語のシンタックスハイライト",
+  "publisher": "Se1getsu",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.98.0"
+  },
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Se1getsu/shol-syntax-highlight"
   },
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "shol",
+    "vscode",
+    "language",
+    "highlight",
+    "syntax"
+  ],
   "contributes": {
     "languages": [{
       "id": "shol",
-      "aliases": ["Shol", "shol"],
-      "extensions": [".shol",".shi"],
+      "aliases": [
+        "Shol",
+        "shol"
+      ],
+      "extensions": [
+        ".shol",
+        ".shi"
+      ],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
