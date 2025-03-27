@@ -213,18 +213,18 @@
 				},
 				{
 					"comment": "Type Hint Operator",
-					"name": "entity.name.type",
-					"match": ":(i(nt)?|d(ouble)?|s(tr)?|b(ool)?|sym(bol)?)"
+					"name": "entity.name.tag",
+					"match": ":(i(nt)?|d(ouble)?|s(tr)?|b(ool)?|sym(bol)?)\\b"
 				},
 				{
 					"comment": "Type Conversion Operator",
 					"name": "entity.name.function",
-					"match": ".(i(nt)?|d(ouble)?|s(tr)?)"
+					"match": ".(i(nt)?|d(ouble)?|s(tr)?)\\b"
 				},
 				{
 					"comment": "Utility Operator",
 					"name": "entity.name.function",
-					"match": ".(ceil|floor|round|abs|ord|chr|len)"
+					"match": ".(ceil|floor|round|abs|ord|chr|len)\\b"
 				},
 				{
 					"comment": "Slice Operation Separator",
