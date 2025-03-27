@@ -12,6 +12,9 @@
 			"include": "#colony_declarations"
 		},
 		{
+			"include": "#resources"
+		},
+		{
 			"include": "#statements"
 		}
 	],
@@ -53,7 +56,31 @@
 						"2": {"name": "entity.name.type.class.shol"}
 					}
 				}
-		]
+			]
+		},
+		"resources": {
+			"begin": "^(?![\\+\\*\\/\\%\\.\\|@])",
+			"end": "$",
+			"patterns": [
+				{
+					"include": "#constants"
+				},
+				{
+					"name": "string.quoted.double.shol",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.shol",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.double.shol",
+					"match": "^.+$"
+				}
+			]
 		},
 		"statements": {
 			"patterns": [
