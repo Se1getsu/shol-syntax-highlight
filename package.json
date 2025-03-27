@@ -1,7 +1,7 @@
 {
   "name": "shol-syntax-highlight",
   "displayName": "Shol Syntax Highlight",
-  "description": "Shol のシンタックスハイライト拡張機能",
+  "description": "Shol 言語のシンタックスハイライト",
   "publisher": "Se1getsu",
   "version": "1.0.0",
   "engines": {
