@@ -70,8 +70,14 @@
 		"colony_declarations": {
 			"patterns": [
 				{
-					"comment": "Colony Declaration",
-					"match": "^([\\*%])([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"match": "^(\\*)([\\p{XID_Start}_]\\p{XID_Continue}*)?",
+					"captures": {
+						"1": {"name": "storage.type.class.shol"},
+						"2": {"name": "entity.name.type.class.shol"}
+					}
+				},
+				{
+					"match": "^(%)((print|cout|cin|exit)\\b)?",
 					"captures": {
 						"1": {"name": "storage.type.class.shol"},
 						"2": {"name": "entity.name.type.class.shol"}
