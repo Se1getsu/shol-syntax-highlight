@@ -63,6 +63,18 @@
 			"end": "$",
 			"patterns": [
 				{
+					"begin": "^(\\-)",
+					"end": "$",
+					"beginCaptures": {
+						"1": {"name": "keyword.operator.arithmetic.shol"}
+					},
+					"patterns": [
+						{
+							"include": "#constants"
+						}
+					]
+				},
+				{
 					"include": "#constants"
 				},
 				{
@@ -77,8 +89,8 @@
 					]
 				},
 				{
-					"name": "string.quoted.double.shol",
-					"match": "^.+$"
+					"name": "string.quoted.other.shol",
+					"match": "^(?![\"\\-]).+$"
 				}
 			]
 		},
@@ -215,7 +227,7 @@
 					]
 				},
 				{
-					"name": "string.nonquoted.shol",
+					"name": "string.quoted.other.shol",
 					"match": "(\\p{XID_Start}|_)\\p{XID_Continue}*"
 				}
 			]
