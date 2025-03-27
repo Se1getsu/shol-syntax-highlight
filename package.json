@@ -2,6 +2,7 @@
   "name": "shol-syntax-highlight",
   "displayName": "shol-syntax-highlight",
   "description": "Shol Syntax Highlight",
+  "publisher": "Se1getsu",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.98.0"
