@@ -12,13 +12,17 @@
 			"include": "#comments"
 		},
 		{
+			"comment": "Empty Line",
+			"match": "^\\s*$"
+		},
+		{
 			"include": "#colony_declarations"
 		},
 		{
-			"include": "#resources"
+			"include": "#statements"
 		},
 		{
-			"include": "#statements"
+			"include": "#resources"
 		}
 	],
 	"repository": {
